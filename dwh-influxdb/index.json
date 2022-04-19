@@ -19,6 +19,9 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "client": [{"file": "/img/*", "target": "/root/", "chmod": "+x"}]
     }
   },
   "environment": {
