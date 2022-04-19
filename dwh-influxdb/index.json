@@ -21,9 +21,10 @@
       "text": "finish.md"
     }
   },
-  "environment": {},
+  "environment": {
+    "uilayout": "terminal"
+  },
   "backend": {
     "imageid": "ubuntu:2004"
-  },
-  "uilayout": "terminal"
+  }
 }
