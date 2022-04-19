@@ -22,7 +22,9 @@
     }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "terminal",
+    "showdashboard": true,
+    "dashboards": [{"name": "Display 8086", "port": 8086}]
   },
   "backend": {
     "imageid": "ubuntu:2004"

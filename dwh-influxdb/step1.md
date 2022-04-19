@@ -7,6 +7,6 @@ For this excercise we are going to be using the official InfluxDB docker image. 
 Next we start an InfluxDB container under the name ```dwh-influxdb```.  
 `docker run -d --name dwh-influxdb influxdb:latest`{{execute}}  
 This label can later be used to modify and control the container instance. For istance one could use it to
-- access the container shell `docker exec -it dwh-influxdb /bin/sh`{{execute}}
+- access the container shell `docker exec -it dwh-influxdb /bin/sh`{{execute}} (only use this in a second terminal, as otherwise you wont be able to access the first one anymore)
 - start the container `docker start dwh-influxdb`{{execute}}
 - stop the container `docker stop dwh-influxdb`{{execute}}
