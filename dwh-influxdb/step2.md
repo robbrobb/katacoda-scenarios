@@ -2,4 +2,4 @@
 
 We now have to set up the InfluxDB instance.
 
-![Katacoda Logo](./img/user_setup.PNG)
+![User Setup](./assets/img/user_setup.PNG)
