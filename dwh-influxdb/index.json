@@ -6,15 +6,15 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Set up Docker environment and containers",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Set up InfluxDB",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Load CSV-Data into InfluxDB",
         "text": "step3.md"
       }
     ],
