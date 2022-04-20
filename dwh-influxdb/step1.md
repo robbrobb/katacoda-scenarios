@@ -5,7 +5,7 @@ The environment used for this catacoda already comes with docker preinstalled. W
 For this excercise we are going to be using the official InfluxDB docker image. It can be pulled via the `docker pull influxdb`{{execute}}.
 
 Next we start an InfluxDB container under the name ```dwh-influxdb```.  
-`docker run -d -p 8086:8086 --volume ``pwd``/influxdb2:/var/lib/influxdb2 --name dwh-influxdb influxdb:latest`{{execute}}  
+`docker run -d -p 8086:8086 --volume $(pwd)/influxdb2:/var/lib/influxdb2 --name dwh-influxdb influxdb:latest`{{execute}}  
 This label can later be used to modify and control the container instance. For istance one could use it to
 - access the container shell `docker exec -it dwh-influxdb /bin/sh`{{execute}} (only use this in a second terminal, as otherwise you wont be able to access the first one anymore)
 - start the container `docker start dwh-influxdb`{{execute}}
