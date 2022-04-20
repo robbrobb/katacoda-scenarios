@@ -21,7 +21,7 @@
       "text": "finish.md"
     },
     "assets": {
-      "host01": [{"file": "/influxdb/*", "target": "/root"}]
+      "host01": [{"file": "/influxdb2/*", "target": "/root"}]
     }
   },
   "environment": {
