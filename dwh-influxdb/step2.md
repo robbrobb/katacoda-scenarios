@@ -12,5 +12,3 @@ For this example we choose
 
 On the next page choose the "Configure Later" option, since we will configure all things later.
 ![Katacoda Logo](./assets/quickstart.png)
-
-![Katacoda Logo](./assets/chadcaustic.png)
