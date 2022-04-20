@@ -2,7 +2,7 @@
 
 The environment used for this catacoda already comes with docker preinstalled. We can test the install with the `docker info`{{execute}} command, and test the execution of containers with `docker run hello-world`{{execute}}. This will run a simple demo container displaying a standard message.
 
-For this excercise we are going to be using the official InfluxDB docker image. It can be pulled via the `docker pull influxdb`{{execute}}.
+For this excercise we are going to be using the official InfluxDB docker image. It can be pulled via the `docker pull influxdb`{{execute}} command.
 
 Next we start an InfluxDB container under the name ```dwh-influxdb```.  
 `docker run -d -p 8086:8086 --volume $(pwd)/influxdb2:/var/lib/influxdb2 --name dwh-influxdb influxdb:latest`{{execute}}  
