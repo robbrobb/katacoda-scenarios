@@ -14,3 +14,7 @@ On the next page choose the "Configure Later" option, since we will configure al
 ![Katacoda Logo](./assets/quickstart.png)
 
 As an alternative to the GUI setup, we can also do all of this by interacting with the docker container in the shell. ```docker exec dwh-influxdb influx setup --bucket dwh-data --org dwh-org --password password --username admin --force```{{execute}}
+
+
+
+```influx write -b dwh-data -f var/lib/influxdb2/test_data_2.csv```{{execute}}
