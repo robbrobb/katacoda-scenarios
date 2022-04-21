@@ -1,11 +1,12 @@
 import influxdb_client
 from influxdb_client.client.write_api import SYNCHRONOUS
+import math
+import time
 
 bucket = "dwh-data"
 org = "dwh-org"
-token = "<my-token>"
-# Store the URL of your InfluxDB instance
-url="https://us-west-2-1.aws.cloud2.influxdata.com"
+token = ""
+url=""
 
 client = influxdb_client.InfluxDBClient(
     url=url,
@@ -15,5 +16,12 @@ client = influxdb_client.InfluxDBClient(
 
 write_api = client.write_api(write_options=SYNCHRONOUS)
 
-p = influxdb_client.Point("my_measurement").tag("location", "Prague").field("temperature", 25.3)
-write_api.write(bucket=bucket, org=org, record=p)
+
+while True:
+
+    val = math.sin(time.time()) * 10
+
+    p = influxdb_client.Point("my_measurement").tag("location", "my_location").field("my_value", val)
+    write_api.write(bucket=bucket, org=org, record=p)
+
+    time.sleep(1)

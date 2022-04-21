@@ -1,5 +1,9 @@
 For our next step we need to install the relevant python libraries.
 
+```docker exec dwh-influxdb influx auth create --org dwh-org --all-access```{{execute}}
+
+
+
 `pip install influxdb-client`{{execute}}   
 
 The python script looks like this:
@@ -39,3 +43,4 @@ write_api.write(bucket=bucket, org=org, record=p)
 
 For our last step, we create a `point` object that we then insert into our bucket.
 
+`python3 influxdb2/write_to_influxdb.py`{{execute}} 
