@@ -15,7 +15,7 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 
 First we need to import the relevant libraries we just installed.
 
-<pre>
+<pre class="file" data-filename="classification.py" data-target="append">
 bucket = "<my-bucket>"
 org = "<my-org>"
 token = "<my-token>"
