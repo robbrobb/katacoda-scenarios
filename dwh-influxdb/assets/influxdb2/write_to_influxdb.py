@@ -19,7 +19,7 @@ write_api = client.write_api(write_options=SYNCHRONOUS)
 
 while True:
 
-    val = math.sin(time.time()) * 10
+    val = math.sin(time.time()/15) * 10
 
     p = influxdb_client.Point("my_measurement").tag("location", "my_location").field("my_value", val)
     write_api.write(bucket=bucket, org=org, record=p)

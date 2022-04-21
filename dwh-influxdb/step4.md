@@ -55,6 +55,6 @@ from(bucket: "dwh-data")
   |> yield(name: "last")
 </pre>
 
-The resulting graph should look something like this:
+The resulting graph should look something like this, though it might take some time to sufficiently fill the bucket:
 
 ![Data Showcase](./assets/sine-curve-2.png)
