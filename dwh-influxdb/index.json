@@ -16,6 +16,10 @@
       {
         "title": "Load CSV-Data into InfluxDB",
         "text": "step3.md"
+      },
+      {
+        "title": "Write data into InfluxDB continuosly with Python",
+        "text": "step4.md"
       }
     ],
     "intro": {

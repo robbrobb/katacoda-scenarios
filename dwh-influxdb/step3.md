@@ -14,7 +14,7 @@ Once the data has been loaded into our bucket, we can view it from inside the we
 
 To select our data via the query builder, simply filter by the tags we have set for our values, in our case `mem` for `_measurement`, `used_percent` for `_field` and `host1` and `host2` for `host`. Alternatively you could use below query for the string query editor to achieve the same result.
 
-    w from(bucket: "dwh-data")
+    from(bucket: "dwh-data")
       |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
       |> filter(fn: (r) => r["_measurement"] == "mem")
       |> filter(fn: (r) => r["_field"] == "used_percent")
