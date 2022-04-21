@@ -26,7 +26,7 @@ from(bucket: "dwh-data")
 
 Regardless of which way you use, your displayed data should look something like this:
 
-![Data Showcase](./assets/data-showcase.png)
+![Data Showcase](./assets/data-showcase-2.png)
 
 In case the data doesn't show up at all, try changing the view date to include the days around the 15th April 2022.
 
