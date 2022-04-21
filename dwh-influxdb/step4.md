@@ -1,12 +1,8 @@
-For our next step we need to install the relevant python libraries.
-
-```docker exec dwh-influxdb influx auth create --org dwh-org --all-access```{{execute}}
+For our next step we need to install the relevant python libraries and create a token to enable our python code access to the InfluxDB. We can install the library with pip `pip install influxdb-client`{{execute}}. This command creates a new all-access token. ```docker exec dwh-influxdb influx auth create --org dwh-org --all-access```{{execute}} Copy the token (long string that ends in "==") and save it, we are going to need it later.
 
 
 
-`pip install influxdb-client`{{execute}}   
-
-The python script looks like this:
+The python script (located under `influxdb2/write_to_influxdb.py`{{open}}) looks like this:
 
 <pre class="file" data-target="clipboard">
 import influxdb_client
@@ -18,8 +14,8 @@ First we need to import the relevant libraries we just installed.
 <pre class="file" data-target="clipboard">
 bucket = "<my-bucket>"
 org = "<my-org>"
-token = "<my-token>"
-url="https://us-west-2-1.aws.cloud2.influxdata.com"
+token = ""
+url=""
 
 client = influxdb_client.InfluxDBClient(
     url=url,
@@ -28,7 +24,8 @@ client = influxdb_client.InfluxDBClient(
 )
 </pre>
 
-Then we store relevant data about our bucket, organization and token in variables, and use them to instantiate a `influxdb_client`.
+Then we store relevant data about our bucket, organization and token in variables, and use them to instantiate a `influxdb_client`. Open the file in the Katacoda editor and edit the variables `token` and `url`. Paste the token you copied earlier into the `token` variable, and set the url variable to this url:
+https://[[HOST_SUBDOMAIN]]-8086-[[KATACODA_HOST]].environments.katacoda.com/
 
 <pre class="file" data-target="clipboard">
 write_api = client.write_api(write_options=SYNCHRONOUS)
@@ -46,7 +43,7 @@ For our last step, we create a `point` object that we then insert into our bucke
 `python3 influxdb2/write_to_influxdb.py`{{execute}} 
 
 
-The script will now continuously fill data into our bucket. To view our data, once again select the data source in the query builder by filtering the tags as follows: `my_measurement` for `_measurement`, `my_value` for `_field` and `my_location` for `location`. Alternatively you could use below query for the string query editor to achieve the same result.
+The script will now continuously create data and fill it into our bucket. To view our data, once again select the data source in the query builder by filtering the tags as follows: `my_measurement` for `_measurement`, `my_value` for `_field` and `my_location` for `location`. Alternatively you could use below query for the string query editor to achieve the same result.
 
 <pre class="file" data-target="clipboard">
 from(bucket: "dwh-data")
@@ -60,4 +57,4 @@ from(bucket: "dwh-data")
 
 The resulting graph should look something like this:
 
-![Data Showcase](./assets/sine-curve.png)
+![Data Showcase](./assets/sine-curve-2.png)
