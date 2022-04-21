@@ -2,13 +2,9 @@ Now switch over to the original Ubuntu shell, where you need to download the Inf
 
 `pip install influxdb-client`{{execute}}   
 
-...   
-
-
-
 The python script looks like this:
 
-<pre>
+<pre class="file" data-target="clipboard">
 import influxdb_client
 from influxdb_client.client.write_api import SYNCHRONOUS
 </pre>
@@ -30,12 +26,16 @@ client = influxdb_client.InfluxDBClient(
 
 Then we store relevant data about our bucket, organization and token in variables, and use them to instantiate a `influxdb_client`.
 
-    write_api = client.write_api(write_options=SYNCHRONOUS)
+<pre class="file" data-target="clipboard">
+write_api = client.write_api(write_options=SYNCHRONOUS)
+</pre>
 
 The `influxdb_client` has a `write_api` method that can be used to instantiate the writer object. 
 
-    p = influxdb_client.Point("my_measurement").tag("location", "Prague").field("temperature", 25.3)
-    write_api.write(bucket=bucket, org=org, record=p)
+<pre class="file" data-target="clipboard">
+p = influxdb_client.Point("my_measurement").tag("location", "Prague").field("temperature", 25.3)
+write_api.write(bucket=bucket, org=org, record=p)
+</pre>
 
 For our last step, we create a `point` object that we then insert into our bucket.
 
