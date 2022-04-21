@@ -1,4 +1,4 @@
-For our next step we need to install the relevant python libraries and create a token to enable our python code access to the InfluxDB. We can install the library with pip `pip install influxdb-client`{{execute}}. This command creates a new all-access token. ```docker exec dwh-influxdb influx auth create --org dwh-org --all-access```{{execute}} Copy the token (long string that ends in "==") and save it, we are going to need it later.
+For our next step we need to install the relevant python libraries and create a token to enable our python code access to the InfluxDB. We can install the library with pip `pip install influxdb-client`{{execute}}. This command creates a new all-access token. ```docker exec dwh-influxdb influx auth create --org dwh-org --all-access```{{execute}} Copy the token (long string that ends in "==") and save it, we are going to need it later. Alternatively you could also create a new token via the GUI, under "Data">"API Tokens">"Generate API Token".
 
 
 
@@ -43,7 +43,7 @@ For our last step, we create a `point` object that we then insert into our bucke
 `python3 influxdb2/write_to_influxdb.py`{{execute}} 
 
 
-The script will now continuously create data and fill it into our bucket. To view our data, once again select the data source in the query builder by filtering the tags as follows: `my_measurement` for `_measurement`, `my_value` for `_field` and `my_location` for `location`. Alternatively you could use below query for the string query editor to achieve the same result.
+The script will now continuously create data and fill it into our bucket. To view our data, once again select the data source in the query builder by firstly removing the old filters and then filtering the tags as follows: `my_measurement` for `_measurement`, `my_value` for `_field` and `my_location` for `location`. Alternatively you could use below query for the string query editor to achieve the same result.
 
 <pre class="file" data-target="clipboard">
 from(bucket: "dwh-data")
@@ -58,3 +58,5 @@ from(bucket: "dwh-data")
 The resulting graph should look something like this, though it might take some time to sufficiently fill the bucket:
 
 ![Data Showcase](./assets/sine-curve-2.png)
+
+If you want to learn more about using Python together with InfluxDB, check out [this official article](https://www.influxdata.com/blog/getting-started-python-influxdb/) from influxdata.
