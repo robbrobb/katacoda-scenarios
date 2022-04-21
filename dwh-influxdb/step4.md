@@ -9,16 +9,13 @@ Now switch over to the original Ubuntu shell, where you need to download the Inf
 The python script looks like this:
 
 <pre>
-<code class="language-python">
 import influxdb_client
 from influxdb_client.client.write_api import SYNCHRONOUS
-</code>
 </pre>
 
 First we need to import the relevant libraries we just installed.
 
 <pre>
-<code>
 bucket = "<my-bucket>"
 org = "<my-org>"
 token = "<my-token>"
@@ -29,7 +26,6 @@ client = influxdb_client.InfluxDBClient(
     token=token,
     org=org
 )
-</code>
 </pre>
 
 Then we store relevant data about our bucket, organization and token in variables, and use them to instantiate a `influxdb_client`.
@@ -42,8 +38,4 @@ The `influxdb_client` has a `write_api` method that can be used to instantiate t
     write_api.write(bucket=bucket, org=org, record=p)
 
 For our last step, we create a `point` object that we then insert into our bucket.
-
-<link rel="stylesheet" href="/path/to/styles/default.min.css">
-<script src="/path/to/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
 
