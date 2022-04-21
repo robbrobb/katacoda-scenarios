@@ -12,4 +12,4 @@ This label can later be used to modify and control the container instance. For i
 
 The `-p` flag in our run command has exposed the relevant ports of the container to the network. That means we can access the InfluxDB GUI via a webbrowser. After starting the container, this can be done either by using the tab `InfluxDB Web` or by using this link https://[[HOST_SUBDOMAIN]]-8086-[[KATACODA_HOST]].environments.katacoda.com/.
 
-If you want to learn more about using InfluxDB in a docker environment, check out ![this awesome blog](https://schoolofsoftware.com/Docker/influxdb).
+If you want to learn more about using InfluxDB in a docker environment, check out [this awesome blog](https://schoolofsoftware.com/Docker/influxdb).
