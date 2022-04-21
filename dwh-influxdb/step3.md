@@ -12,7 +12,9 @@ By executing this command we can load data into our bucket.```docker exec dwh-in
 
 Once the data has been loaded into our bucket, we can view it from inside the web interface. Head over to the "Explore" tab. Here you can select the data you want either via a graphical query builder, or via a string query.
 
-To select our data via the query builder, simply filter by the tags we have set for our values, in our case `mem` for `_measurement`, `used_percent` for `_field` and `host1` and `host2` for `host`. Alternatively you could use below query for the string query editor to achieve the same result.
+To select our data via the query builder, simply filter by the tags we have set for our values, in our case `mem` for `_measurement`, `used_percent` for `_field` and `host1` and `host2` for `host`. It is also important to set the timescale correctly. You can do this by using the buttons on the right side.
+![Data Showcase](./assets/buttons-right-side.png)
+Thats also where you could alternatively use below query for the string query editor to achieve the same result.
 
 <pre class="file" data-target="clipboard">
 from(bucket: "dwh-data")

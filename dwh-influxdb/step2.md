@@ -1,4 +1,4 @@
-We now have to set up the InfluxDB instance. We are firstly prompted to create a local user account, an organisation and a initial bucket. The account is used to login into the web instance. An organization is a workspace for a group of users, which enables access-control for time series data, dashboards, and other resources. A bucket is where your time series data is stored.
+We now have to set up the InfluxDB instance. Inside the web GUI, we are firstly prompted to create a local user account, an organisation and a initial bucket. The account is used to login into the web instance. An organization is a workspace for a group of users, which enables access-control for time series data, dashboards, and other resources. A bucket is where your time series data is stored.
 
 ![Katacoda Logo](./assets/user-setup.png)
 

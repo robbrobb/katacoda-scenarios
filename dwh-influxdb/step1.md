@@ -9,4 +9,4 @@ This label can later be used to modify and control the container instance. For i
 - start the container `docker start dwh-influxdb`{{execute}}
 - stop the container `docker stop dwh-influxdb`{{execute}}
 
-The `-p` flag in our run command has exposed the relevant ports of the container to the network. That means we can access the InfluxDB GUI via a webbrowser. After starting the container, his can be done either by using the tab `InfluxDB` or by using this link https://[[HOST_SUBDOMAIN]]-8086-[[KATACODA_HOST]].environments.katacoda.com/.
+The `-p` flag in our run command has exposed the relevant ports of the container to the network. That means we can access the InfluxDB GUI via a webbrowser. After starting the container, this can be done either by using the tab `InfluxDB` or by using this link https://[[HOST_SUBDOMAIN]]-8086-[[KATACODA_HOST]].environments.katacoda.com/.

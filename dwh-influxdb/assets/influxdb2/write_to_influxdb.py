@@ -6,7 +6,7 @@ import time
 bucket = "dwh-data"
 org = "dwh-org"
 token = ""  #copy the saved token here
-url=""      #copy the InfluxDB-url here
+url = ""      #copy the InfluxDB-url here
 
 client = influxdb_client.InfluxDBClient(
     url=url,
