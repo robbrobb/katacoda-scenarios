@@ -1,4 +1,4 @@
-For our next step we need to install the relevant python libraries and create a token to enable our python code access to the InfluxDB. We can install the library with pip `pip install influxdb-client`{{execute}}. This command creates a new all-access token. ```docker exec dwh-influxdb influx auth create --org dwh-org --all-access```{{execute}} Copy the token (long string that ends in "==") and save it, we are going to need it later. Alternatively you could also create a new token via the GUI, under "Data">"API Tokens">"Generate API Token".
+For our next step we need to install the relevant python libraries and create a token to enable our python code access to the InfluxDB. We can install the library with pip `pip install influxdb-client`{{execute}}. The next command creates a new all-access token. ```docker exec dwh-influxdb influx auth create --org dwh-org --all-access```{{execute}} Copy the token (long string that ends in "==") and save it, we are going to need it later. Alternatively you could also create a new token via the GUI, under "Data">"API Tokens">"Generate API Token".
 
 
 
@@ -24,7 +24,7 @@ client = influxdb_client.InfluxDBClient(
 )
 </pre>
 
-Then we store relevant data about our bucket, organization and token in variables, and use them to instantiate a `influxdb_client`. Open the file in the Katacoda editor and edit the variables `token` and `url`. Paste the token you copied earlier into the `token` variable, and set the url variable to this url:
+We then store relevant data about our bucket, organization and token in variables, and use them to instantiate a `influxdb_client`. Open the file in the Katacoda editor and edit the variables `token` and `url`. Paste the token you copied earlier into the `token` variable, and set the url variable to this url:
 https://[[HOST_SUBDOMAIN]]-8086-[[KATACODA_HOST]].environments.katacoda.com/
 
 <pre class="file" data-target="clipboard">
@@ -43,7 +43,7 @@ For our last step, we create a `point` object that we then insert into our bucke
 `python3 influxdb2/write_to_influxdb.py`{{execute}} 
 
 
-The script will now continuously create data and fill it into our bucket. To view our data, once again select the data source in the query builder by firstly removing the old filters and then filtering the tags as follows: `my_measurement` for `_measurement`, `my_value` for `_field` and `my_location` for `location`. Alternatively you could use below query for the string query editor to achieve the same result.
+If we execute the script, it will now continuously create data and fill it into our bucket. To view our data, once again select the data source in the query builder by firstly removing the old filters and then filtering the tags as follows: `my_measurement` for `_measurement`, `my_value` for `_field` and `my_location` for `location`. Alternatively you could use below query for the string query editor to achieve the same result.
 
 <pre class="file" data-target="clipboard">
 from(bucket: "dwh-data")

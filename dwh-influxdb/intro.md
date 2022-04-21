@@ -4,7 +4,7 @@ In our modern world data is really important, Tim Berners-Lee, the father of the
 
 One such system is InfluxDB. InfluxDB is a platform for building & operating time series applications, monitoring metrics and much more. In this interactive tutorial we are going to learn the basics of working with InfluxDB. That includes:
 
-- Setting up a docker InfluxDB docker container
+- Setting up an InfluxDB docker container
 - Configuring the InfluxDB instance
 - Loading preexisting .csv-data into a bucket
 - Continuously adding data to our bucket with Python
