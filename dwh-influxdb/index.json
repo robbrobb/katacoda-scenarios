@@ -33,7 +33,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-terminal",
+    "uilayout": "editor-terminal",
     "showdashboard": true,
     "dashboards": [{"name": "InfluxDB Web", "port": 8086}]
   },

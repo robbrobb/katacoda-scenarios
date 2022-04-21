@@ -1,4 +1,4 @@
-Now switch over to the original Ubuntu shell, where you need to download the InfluxDB library for Python.
+For our next step we need to install the relevant python libraries.
 
 `pip install influxdb-client`{{execute}}   
 
