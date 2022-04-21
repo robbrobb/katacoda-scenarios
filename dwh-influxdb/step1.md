@@ -1,5 +1,3 @@
-# Set up Docker environment and containers
-
 The environment used for this catacoda (Ubuntu 20.4) already comes with docker preinstalled. We can test the install with the `docker info`{{execute}} command, and test the execution of containers with `docker run hello-world`{{execute}}. This will run a simple demo container displaying a standard message.
 
 For this excercise we are going to be using the official InfluxDB docker image. It can be pulled via the `docker pull influxdb`{{execute}} command.

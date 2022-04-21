@@ -2,7 +2,7 @@
   "title": "DWH InfluxDB First Steps",
   "description": "",
   "difficulty": "Beginner",
-  "time": "20",
+  "time": "20 minutes",
   "details": {
     "steps": [
       {
@@ -33,7 +33,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "terminal-terminal",
     "showdashboard": true,
     "dashboards": [{"name": "InfluxDB Web", "port": 8086}]
   },

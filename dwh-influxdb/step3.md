@@ -1,5 +1,3 @@
-# Load CSV-Data into InfluxDB
-
 For our next step, we want to load data in a .csv-format into InfluxDB. As our datasource, we are going to use a demo file locatet at `var/lib/influxdb2/test_data_2.csv` inside the InfluxDB docker container and under `/influxdb2/test_data_2.csv` on the virtual machine. The contents look like this and contain timeseries data on memory usage on two different hosts:
 
     #datatype measurement,tag,double,dateTime:RFC3339

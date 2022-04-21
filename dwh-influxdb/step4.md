@@ -4,9 +4,7 @@ Now switch over to the original Ubuntu shell, where you need to download the Inf
 
 ...   
 
-<link rel="stylesheet" href="/path/to/styles/default.min.css">
-<script src="/path/to/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+
 
 The python script looks like this:
 
@@ -20,7 +18,7 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 First we need to import the relevant libraries we just installed.
 
 <pre>
-<code class="language-python">
+<code>
 bucket = "<my-bucket>"
 org = "<my-org>"
 token = "<my-token>"
@@ -45,6 +43,7 @@ The `influxdb_client` has a `write_api` method that can be used to instantiate t
 
 For our last step, we create a `point` object that we then insert into our bucket.
 
-
-
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 
