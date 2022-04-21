@@ -1,4 +1,4 @@
-For our next step, we want to load data in a .csv-format into InfluxDB. As our datasource, we are going to use a demo file locatet at `var/lib/influxdb2/test_data_2.csv` inside the InfluxDB docker container and under `/influxdb2/test_data_2.csv` on the virtual machine. The contents look like this and contain timeseries data on memory usage on two different hosts:
+For our next step, we want to load data in a .csv-format into InfluxDB. As our datasource, we are going to use a demo file locatet at `var/lib/influxdb2/test_data_2.csv` inside the InfluxDB docker container and under `influxdb2/test_data_2.csv`{{open}} on the virtual machine. The contents look like this and contain timeseries data on memory usage on two different hosts:
 
 
     #datatype measurement,tag,double,dateTime:RFC3339
@@ -8,7 +8,7 @@ For our next step, we want to load data in a .csv-format into InfluxDB. As our d
 The first line defines the datatypes used for the different columns. The second line defines the names of the columns, and the following columns are actual data.
 
 
-If we execute this command ```docker exec dwh-influxdb influx write -b dwh-data -f var/lib/influxdb2/test_data_2.csv```{{execute}}, we can load the data into our bucket.
+By executing this command we can load data into our bucket.```docker exec dwh-influxdb influx write -b dwh-data -f var/lib/influxdb2/test_data_2.csv```{{execute}}
 
 Once the data has been loaded into our bucket, we can view it from inside the web interface. Head over to the "Explore" tab. Here you can select the data you want either via a graphical query builder, or via a string query.
 
