@@ -8,8 +8,10 @@ Now switch over to the original Ubuntu shell, where you need to download the Inf
 
 The python script looks like this:
 
+<pre>
     import influxdb_client
     from influxdb_client.client.write_api import SYNCHRONOUS
+</pre>
 
 First we need to import the relevant libraries we just installed.
 
