@@ -10,4 +10,5 @@ For this example we choose
 
 On the next page choose the "Configure Later" option, since we will configure all things later.
 
-As an alternative to the GUI setup, we can also do all of this by interacting with the docker container in the shell. ```docker exec dwh-influxdb influx setup --bucket dwh-data --org dwh-org --password password --username admin --force```{{execute}}. The `docker exec dwh-influxdb` part of our command causes the rest of the command to be executed inside our container shell. That is where we actually want to set all the variables.
+As an alternative to the GUI setup, we can also do all of this by interacting with the docker container in the shell. ```docker exec dwh-influxdb influx setup --bucket dwh-data --org dwh-org --password password --username admin --force```{{execute}}
+The `docker exec dwh-influxdb` part of our command causes the rest of the command to be executed inside our container shell. That is where we actually want to set all the variables.
