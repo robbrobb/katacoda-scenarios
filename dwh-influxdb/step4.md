@@ -44,3 +44,20 @@ write_api.write(bucket=bucket, org=org, record=p)
 For our last step, we create a `point` object that we then insert into our bucket.
 
 `python3 influxdb2/write_to_influxdb.py`{{execute}} 
+
+
+The script will now continuously fill data into our bucket. To view our data, once again select the data source in the query builder by filtering the tags as follows: `my_measurement` for `_measurement`, `my_value` for `_field` and `my_location` for `location`. Alternatively you could use below query for the string query editor to achieve the same result.
+
+<pre class="file" data-target="clipboard">
+from(bucket: "dwh-data")
+  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+  |> filter(fn: (r) => r["_measurement"] == "my_measurement")
+  |> filter(fn: (r) => r["_field"] == "my_value")
+  |> filter(fn: (r) => r["location"] == "my_location")
+  |> aggregateWindow(every: v.windowPeriod, fn: last, createEmpty: false)
+  |> yield(name: "last")
+</pre>
+
+The resulting graph should look something like this:
+
+![Data Showcase](./assets/sine-curve.png)
