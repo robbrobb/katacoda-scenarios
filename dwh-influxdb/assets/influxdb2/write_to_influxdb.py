@@ -5,13 +5,13 @@ import time
 
 bucket = "dwh-data"
 org = "dwh-org"
-token = ""
-url=""
+token = ""  #copy the saved token here
+url=""      #copy the InfluxDB-url here
 
 client = influxdb_client.InfluxDBClient(
     url=url,
     token=token,
-    org=org
+    org=org    
 )
 
 write_api = client.write_api(write_options=SYNCHRONOUS)
