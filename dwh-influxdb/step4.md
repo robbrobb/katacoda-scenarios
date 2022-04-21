@@ -4,29 +4,37 @@ Now switch over to the original Ubuntu shell, where you need to download the Inf
 
 ...   
 
-
+<pre>
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</pre>
 
 The python script looks like this:
 
 <pre>
-    <code class="language-python">
-    import influxdb_client
-    from influxdb_client.client.write_api import SYNCHRONOUS
-    </code>
+<code class="language-python">
+import influxdb_client
+from influxdb_client.client.write_api import SYNCHRONOUS
+</code>
 </pre>
 
 First we need to import the relevant libraries we just installed.
 
-    bucket = "<my-bucket>"
-    org = "<my-org>"
-    token = "<my-token>"
-    url="https://us-west-2-1.aws.cloud2.influxdata.com"
+<pre>
+<code class="language-python">
+bucket = "<my-bucket>"
+org = "<my-org>"
+token = "<my-token>"
+url="https://us-west-2-1.aws.cloud2.influxdata.com"
 
-    client = influxdb_client.InfluxDBClient(
-       url=url,
-       token=token,
-       org=org
-    )
+client = influxdb_client.InfluxDBClient(
+    url=url,
+    token=token,
+    org=org
+)
+</code>
+</pre>
 
 Then we store relevant data about our bucket, organization and token in variables, and use them to instantiate a `influxdb_client`.
 
